@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Klassische italienische Farbpalette */
+  --color-primary: #d2691e;        /* Terrakotta */
+  --color-primary-light: #e6a865;  
+  --color-primary-dark: #b8541a;   
+  --color-secondary: #6b8e23;      /* Olivgrün */
+  --color-secondary-light: #8fb339;
+  --color-secondary-dark: #556b1c;
+  --color-accent: #ffd700;         /* Gold */
+  --color-accent-light: #ffdf33;
+  --color-accent-dark: #ccab00;
+  --color-neutral-50: #faf9f7;    /* Creme */
+  --color-neutral-100: #f5f3f0;
+  --color-neutral-200: #e8e4dd;
+  --color-neutral-300: #d4cfc4;
+  --color-neutral-400: #a8a094;
+  --color-neutral-500: #6b6660;
+  --color-neutral-600: #554f46;
+  --color-neutral-700: #423d34;
+  --color-neutral-800: #2d2925;
+  --color-neutral-900: #1a1714;
+  --color-error: #dc2626;
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-neutral-50);
+    color: var(--color-neutral-800);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-none font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary-dark text-white px-6 py-3 rounded-none font-semibold transition-all duration-300 shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-none font-semibold transition-all duration-300;
+  }
+  
+  .card {
+    @apply bg-white shadow-lg rounded-none border border-neutral-200 p-6;
+  }
+  
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-12 lg:py-16;
+  }
+  
+  .parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  }
+  
+  .bg-overlay {
+    background: linear-gradient(45deg, rgba(210, 105, 30, 0.85), rgba(107, 142, 35, 0.75));
+  }
+}
